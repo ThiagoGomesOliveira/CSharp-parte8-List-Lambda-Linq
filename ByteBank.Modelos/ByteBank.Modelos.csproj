@@ -55,6 +55,7 @@
     <Compile Include="IAutenticavel.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="ListaDeContaCorrente.cs" />
+    <Compile Include="ListExtensoes.cs" />
     <Compile Include="OperacaoFinanceiraException.cs" />
     <Compile Include="ParceiroComercial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

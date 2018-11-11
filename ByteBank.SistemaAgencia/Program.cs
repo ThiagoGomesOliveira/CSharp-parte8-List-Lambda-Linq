@@ -17,8 +17,8 @@ namespace ByteBank.SistemaAgencia
             idades.Add(10);
             idades.Add(30);
             idades.Add(29);
-            
 
+            idades.AdcionarVarios(30,20,15);
             Console.WriteLine();
             Console.ReadLine();
         }
