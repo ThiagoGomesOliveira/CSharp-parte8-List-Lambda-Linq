@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
 using ByteBank.Modelos.Extensoes;
+using ByteBank.Modelos.Comparadores;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -13,14 +14,33 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            List<int> idades = new List<int>();
+            var contas = new List<ContaCorrente>
+            {
+                new ContaCorrente(1111,01),
+                new ContaCorrente(2222,02),
+                new ContaCorrente(3333,03)
+            };
 
-            idades.Add(10);
-            idades.Add(30);
-            idades.Add(29);
+            //contas.Sort();
+            contas.Sort(new ComparadorContaCorrentePorAgencia());
+            foreach (var conta in contas)
+            {
+                Console.WriteLine($"Agencia {conta.Agencia} número {conta.Numero}");
+            }
 
-            idades.AdicionarVarios(10,20,30);
-            Console.WriteLine();
+            Console.ReadLine();
+        }
+        public static void TestarVarOrdenacao()
+        {
+            var idades = new List<int>();
+
+            idades.AdicionarVarios(10, 20, 30, 40);
+            idades.Sort();
+            foreach (var idade in idades)
+            {
+                Console.WriteLine($"Idade {idade}");
+            }
+
             Console.ReadLine();
         }
         public static void TestarLista()
